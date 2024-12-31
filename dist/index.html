@@ -1,44 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-     crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
     <title>Weather App </title>
 </head>
+
 <body>
-    <main>
-        <h1>Responsive Weather App Powered by the open weather A P I </h1>
+    <main class="container">
+        <h1 class="offScreen">Responsive Weather Powered by the open weather A P I </h1>
+
         <section id="searchBar" class="searchBar">
             <form id="searchBar_form" class="searchBar_form" role="search">
-                <label for="sreachBar_text">Enter a new location</label>
-                <input id="sreachBar_text" type="text" size="40" role="searchbox" autocomplete="off" placeholder="City,State,Country"/>
-                <button
-                 id="searchBar_button" class="searchBar_button" type="button"
-                 title="search submit"tooltip name="search" aria-label="Enter Zip Code or City ,state , and country to retrieve weather conditions">
-                    submit
+
+                <label for="sreachBar_text" class="offScreen">Enter a new location</label>
+
+                <input id="sreachBar_text" class="searchBar_text" type="text" size="40" role="searchbox"
+                    autocomplete="off" placeholder="City,State,Country" />
+
+                <button id="searchBar_button" class="searchBar_button button" type="button" title="search submit"
+                    tooltip name="search"
+                    aria-label="Enter Zip Code or City ,state , and country to retrieve weather conditions">
+                    <i class="fa fa-search"></i>
+
                 </button>
             </form>
+        </section>
+
+        <a href="#currentForecast" class="skip-link">Skip to Current Conditions</a>
+
+        <section id="currentForecast" class="currentForecast" role="region" aria-labelledby="weatherLocation">
+            <h2 id="currentForecast_location" class="currentForecast_location"> Current conditions</h2>
+
+            <div id="currentForecast_conditions" class="currentForecast_conditions">
+
+                <div class="icon" id="icon">
+                    <i class="far fa-sun" aria-hidden="true" title="clear sky"></i>
+
+                </div>
+                <div class="temp">
+                    <span class="tempNumber">49<span>&#176;</span></span>
+                    <div class="unit">F</div>
+                </div>
+                <div class="desc">clear sky</div>
+                <div class="feels">feels like 43</div>
+                <div class="maxtemp">High 52</div>
+                <div class="mintemp">Low 29</div>
+                <div class="humidity">Humidity 44</div>
+                <div class="wind"> wind 7mph</div>
+            </div>
 
         </section>
 
-        <section id="currntForecast" class="currntForecast" >
-            <label for="currntForecast">currntForecast</label>
+        <a href="#dailyForecast" class="skip-link offScreen">Skip to Current Conditions</a>
 
-        </section>
         <nav id="navBUttons" class="navBUttons">
+            <button id="getLocation" class="button" title="Get Location"
+                aria-label="get the current weather conditions for your current location ">
+                <i class="fas fa-map-marker-alt"></i>
+            </button>
 
+            <button id="home" class="button" title="home weather"
+                aria-label="get the current weather conditions for your home location ">
+                <i class="fas fa-home"></i>
+            </button>
+
+            <button id="saveLocation" class="button" title="save Location"
+                aria-label="Save the current location as your home location ">
+                <i class="fas fa-save"></i>
+            </button>
+
+            <button id="unit" class="button" title="Toggle Measurement Units"
+                aria-label="toggle between metric and imperial measurement units ">
+                <i class="fas fa-chart-bar"></i>
+            </button>
+            <button id="refresh" class="button" title="Refresh Weather"
+                aria-label="refresh the current weather conditions ">
+                <i class="fas fa-sync-alt"></i>
+            </button>
         </nav>
 
+        <hr>
+
         <section id="dailyForecast" class="dailyForecast">
-            <h2></h2>
+            <h2 id="dailyForecast_title" class="dailyForecast_title offScreen">six day forecast</h2>
+            <div id="dailyForecast_content" class="dailyForecast_content">
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">Fri</p>
+                    <img src="https://openweathermap.org/img/wn/10d.png" alt="moderate rain">
+                    <p class="dayHight">60</p>
+                    <p class="daylow">47</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">Fri</p>
+                    <img src="https://openweathermap.org/img/wn/10d.png" alt="moderate rain">
+                    <p class="dayHight">60</p>
+                    <p class="daylow">47</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">Fri</p>
+                    <img src="https://openweathermap.org/img/wn/10d.png" alt="moderate rain">
+                    <p class="dayHight">60</p>
+                    <p class="daylow">47</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">Fri</p>
+                    <img src="https://openweathermap.org/img/wn/10d.png" alt="moderate rain">
+                    <p class="dayHight">60</p>
+                    <p class="daylow">47</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">Fri</p>
+                    <img src="https://openweathermap.org/img/wn/10d.png" alt="moderate rain">
+                    <p class="dayHight">60</p>
+                    <p class="daylow">47</p>
+                </div>
+
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">Fri</p>
+                    <img src="https://openweathermap.org/img/wn/10d.png" alt="moderate rain">
+                    <p class="dayHight">60</p>
+                    <p class="daylow">47</p>
+                </div>
+            </div>
         </section>
+
+        <p id="confirmation" class="offScreen" aria-live="assertive"></p>
+
+
+        </div>
     </main>
-    
+
 </body>
+
 </html>
