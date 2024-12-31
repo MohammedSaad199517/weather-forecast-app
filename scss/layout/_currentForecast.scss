@@ -1,0 +1,90 @@
+.currentForecast {
+    .currentForecast_location {
+        font-size: 1rem;
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        @include mq(768px) {
+            font-size: 1.3rem;
+
+        }
+    }
+
+    .currentForecast_conditions {
+        width: 100%;
+        font-size: 1.1rem;
+        margin: auto auto 2rem;
+        display: grid;
+
+        @include mq (375px) {
+            font-size: 1.3rem;
+        }
+
+        @include mq(400px) {
+            font-size: 1.7rem;
+        }
+
+
+        .temp {
+
+        
+            grid-column: 1 span /2;
+            grid-row: 1 /span 3;
+            position: relative;
+
+            .tempNumber {
+                font-size: 100px;
+              
+            }
+
+            .unit {
+                font-size: 22px;
+                color: $fadecolor;
+                position: absolute;
+                right: 0%;
+                background-color: red;
+
+            }
+        }
+ 
+        .icon {
+            grid-column: 3/span 2;
+            grid-row: 1 /span 1;
+            display: n;
+
+        }
+
+        .maxtemp {
+            grid-column: 3 /span 2;
+            grid-row: 2 /span 1;
+        }
+
+        .mintemp {
+            grid-column: 3 /span 2;
+            grid-row: 3 / span 1;
+        }
+
+        .desc {
+            grid-column: 1 /span 4;
+            grid-row: 4 / span 1;
+        }
+
+        .feels {
+            grid-column: 1 /span 4;
+            grid-row: 5 / span 1;
+        }
+
+
+        .humidity {
+            grid-column: 1 /span 4;
+            grid-row: 6 / span 1;
+        }
+
+        .wind {
+            grid-column: 1 /span 4;
+            grid-row: 7 / span 1;
+        }
+
+    }
+}
